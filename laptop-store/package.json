@@ -1,13 +1,17 @@
 {
   "name": "laptop-store",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server db.json --port 3001 --delay 500",
+    "server:watch": "json-server --watch db.json --port 3001 --delay 500",
+    "start": "concurrently -k -n API,WEB -c cyan,magenta \"npm run server\" \"npm run dev\"",
+    "reset-db": "node scripts/reset-db.js"
   },
   "dependencies": {
     "axios": "^1.21.0",
@@ -25,9 +29,9 @@
     "concurrently": "^10.0.6",
     "eslint": "^10.13.0",
     "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.7",
+    "eslint-plugin-react-refresh": "^5.0.0",
     "globals": "^17.13.0",
-    "json-server": "^0.17.4",
+    "json-server": "0.17.4",
     "vite": "^8.3.5"
   }
 }

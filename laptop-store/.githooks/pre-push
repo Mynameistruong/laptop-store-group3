@@ -1,0 +1,26 @@
+#!/bin/sh
+set -eu
+
+echo "pre-push: checking repository rules..."
+fail=0
+
+if grep -rnE "\.then\(" src; then
+  echo "✖ TECH-02: avoid .then() in src"; fail=1
+fi
+if grep -rnE "useEffect\(\s*async" src; then
+  echo "✖ TECH-02: useEffect cannot be async"; fail=1
+fi
+if grep -rlE "from ['\"]axios['\"]" src | grep -v '^src/api/' >/dev/null; then
+  echo "✖ TECH-01: only src/api can import axios"; fail=1
+fi
+if grep -rn "localhost:3001" src; then
+  echo "✖ TECH-01: hardcoded API URL is forbidden"; fail=1
+fi
+if grep -rnE "(alert|confirm)\s*\(|window\.(alert|confirm)\s*\(" src; then
+  echo "✖ TECH-05: use Toast/ConfirmModal instead of alert/confirm"; fail=1
+fi
+
+[ "$fail" -eq 0 ] || { echo "Push blocked"; exit 1; }
+
+echo "pre-push: npm run build..."
+npm run build --silent || { echo "Build failed"; exit 1; }
