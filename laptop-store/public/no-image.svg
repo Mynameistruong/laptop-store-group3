@@ -1,0 +1,68 @@
+import { useEffect, useState } from 'react';
+import { Badge, Button, Card, Form, Table } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
+import { orderApi } from '../../api/orderApi';
+
+export default function AdminOrderPage() {
+  const location = useLocation();
+  const [status, setStatus] = useState('pending');
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const currentStatus = params.get('status') || 'pending';
+    setStatus(currentStatus);
+    async function load() {
+      const data = await orderApi.getAll({ status: currentStatus });
+      setOrders(data);
+    }
+    load();
+  }, [location.search]);
+
+  const updateStatus = async (id, nextStatus) => {
+    await orderApi.updateStatus(id, nextStatus);
+    const data = await orderApi.getAll({ status });
+    setOrders(data);
+  };
+
+  return (
+    <Card className="shadow-sm border-0">
+      <Card.Body>
+        <h3>Quản lý đơn hàng</h3>
+        <div className="d-flex gap-2 my-3">
+          {['pending', 'confirmed', 'shipping', 'done'].map((value) => (
+            <Button key={value} variant={status === value ? 'primary' : 'outline-secondary'} onClick={() => setStatus(value)}>
+              {value}
+            </Button>
+          ))}
+        </div>
+        <Table hover>
+          <thead>
+            <tr>
+              <th>Mã đơn</th>
+              <th>Khách</th>
+              <th>Tổng</th>
+              <th>Trạng thái</th>
+            </tr>
+          </thead>
+          <tbody>
+            {orders.map((order) => (
+              <tr key={order.id}>
+                <td>#{order.id}</td>
+                <td>{order.customerName}</td>
+                <td>{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND', maximumFractionDigits: 0 }).format(order.total)}</td>
+                <td>
+                  <Form.Select value={order.status} onChange={(e) => updateStatus(order.id, e.target.value)}>
+                    {['pending', 'confirmed', 'shipping', 'done'].map((value) => (
+                      <option key={value} value={value} disabled={value === 'pending' && order.status !== 'pending'}>{value}</option>
+                    ))}
+                  </Form.Select>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </Card.Body>
+    </Card>
+  );
+}
