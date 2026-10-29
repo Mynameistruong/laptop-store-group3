@@ -95,7 +95,7 @@ Ghi theo mẫu báo cáo gốc: mỗi issue cần có người thực hiện/rev
 
 | Issue | Công việc | Người làm | Reviewer | File / module | Trạng thái minh chứng | Lệnh / kết quả test | Ảnh 1 / Ảnh 2 | Branch / commit / PR | Kết quả review | Checklist / ngày / ghi chú lỗi |
 |---:|---|---|---|---|---|---|---|---|---|---|
-| #1 | [CHORE] Repo templates & CODEOWNERS | B | A |  | Chưa ghi nhận |  |  |  |  |  |
+| #1 | [CHORE] Repo templates & CODEOWNERS | B | A | `.githooks/pre-push`: sửa Git mode 100644 → 100755; đối chiếu templates, CODEOWNERS, `.env.example`, `.gitignore` đã có | Đã kiểm tra cục bộ; chờ PR/review | `sh .githooks/pre-push`: TECH-01/02/05 và build đạt, exit 0; `npm --prefix laptop-store run lint`: đạt, exit 0; `git ls-files --stage .githooks/pre-push`: 100755; `git check-ignore laptop-store/.env`: được ignore | [Ảnh 1](screenshots/issues/issue-01-01.png) / [Ảnh 2](screenshots/issues/issue-01-02.png): ảnh trình duyệt hiển thị đầu ra lệnh thực tế | `chore/1-repo-templates`, nền `5817d89`; commit xem lịch sử nhánh; PR chưa tạo (chưa đăng nhập GitHub) | Chờ A; chưa approve/merge | 29/10/2026: tiêu chí file/mode và kiểm tra cục bộ đạt; còn PR, review, merge và board. Ban đầu thiếu Vite/ESLint; đã chạy `npm ci` theo lockfile rồi kiểm tra lại thành công. Issue GitHub còn ghi phân công cũ; áp dụng B làm/A review theo phân công mới. |
 | #2 | [FEATURE] Project setup & configuration (Phần 0) | B | A |  | Chưa ghi nhận |  |  |  |  |  |
 | #3 | [CHORE] Seed data db.json (0.4) | B | A |  | Chưa ghi nhận |  |  |  |  |  |
 | #4 | [FEATURE] Format utils formatPrice/formatDate (A3) | B | A |  | Chưa ghi nhận |  |  |  |  |  |
