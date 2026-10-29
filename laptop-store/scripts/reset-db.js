@@ -1,13 +1,5 @@
+// Khôi phục db.json về dữ liệu gốc: npm run reset-db
 import { copyFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
-import { dirname, resolve } from 'node:path';
 
-const currentDir = dirname(fileURLToPath(import.meta.url));
-const rootDir = resolve(currentDir, '..');
-
-copyFileSync(
-  resolve(rootDir, 'db.backup.json'),
-  resolve(rootDir, 'db.json')
-);
-
-console.log('Database reset successfully!');
+copyFileSync(new URL('../db.backup.json', import.meta.url), new URL('../db.json', import.meta.url));
+console.log('✔ Đã khôi phục db.json từ db.backup.json');
