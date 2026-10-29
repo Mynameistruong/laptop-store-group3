@@ -1,8 +1,8 @@
-# Assignment_readme.md — LaptopStore: đề bài & 31 issue cho nhóm 3 người
+# Assignment_readme.md — LaptopStore: đề bài & 31 issue cho nhóm 2 người
 
 > **Dự án:** LaptopStore (`laptop-store`) — Exercise 27 mở rộng, FER202
 > **Hướng dẫn thao tác:** `Assignment_guide.md`
-> **Nhóm 3 người:** **A** (Leader — khởi tạo repo, tầng API lõi, đăng nhập/phân quyền, routing, quản trị laptop, release) · **B** (Catalog — khách xem hàng) · **C** (Commerce — giỏ hàng, đơn hàng, form quản trị, kiểm thử)
+> **Nhóm 2 người:** **A** (Leader — khởi tạo repo, tầng API lõi, đăng nhập/phân quyền, routing, quản trị laptop, release) · **B** (Catalog + Commerce/QA — khách xem hàng, giỏ hàng, đơn hàng, form quản trị, dữ liệu và kiểm thử)
 > **Công nghệ:** React + Vite · react-bootstrap + bootstrap 5 · react-router-dom 6 · axios · json-server 0.17.4 · concurrently
 
 Tài liệu này là **đề bài cho nhóm**: chia Exercise 27 mở rộng thành **31 issue**, phân công người làm và người review, quy định cách làm việc trên GitHub (issue → nhánh → commit → Pull Request → review → merge). Toàn bộ thao tác chi tiết từng bước nằm trong `Assignment_guide.md`; **code đầy đủ của từng issue** nằm trong `Assignment_code.md`.
@@ -52,28 +52,25 @@ Tài liệu này là **đề bài cho nhóm**: chia Exercise 27 mở rộng thà
 | Người | Vai trò | Phụ trách (code) | CODEOWNERS |
 |---|---|---|---|
 | **A (Leader)** | Khởi tạo repo, template, cấu hình; tầng API lõi; đăng nhập & phân quyền; routing; hooks dùng chung; quản trị laptop; release `v1.0.0` | Phần 0, B (axiosClient, auth), F, H1–H3, D3, G3 (bảng) | `.github/`, `.githooks/`, `package.json`, `src/App.jsx`, `src/api/axiosClient.js`, `src/api/authApi.js`, `src/hooks/`, `AuthContext`, `*Layout*`, `*Filter*`, `*Search*`, `AdminLaptopPage` |
-| **B** | Catalog: khách xem hàng | A3, B5 (laptop/catalog/review), C1–C3, D1–D2, E, F3, G2 | `src/utils/`, `src/components/common/` (trừ ConfirmModal), `src/components/laptop/` (trừ Form/Filter), `laptopApi`, `catalogApi`, `reviewApi`, `Home*`, `LaptopList*`, `LaptopDetail*`, `*Review*`, `*Navbar*`, `README.md` |
-| **C** | Commerce: dữ liệu, giỏ hàng, thanh toán, đơn hàng, form quản trị, kiểm thử | 0.4 (db), B5 (cart/order), C4, G1, G3 (form), G4, H4 | `db.json`, `db.backup.json`, `scripts/`, `cartApi`, `orderApi`, `CartContext`, `ToastContext`, `ConfirmModal`, `LaptopForm`, `Cart*`, `Checkout*`, `*Order*`, `AdminLaptopFormPage`, `docs/TEST_REPORT.md` |
+| **B** | Catalog + Commerce/QA: dữ liệu, khách xem hàng, giỏ hàng, thanh toán, đơn hàng, form quản trị và kiểm thử | 0.4 (db), A3, B5, C1–C4, D1–D2, E, F3, G1–G4, H4 | `db.json`, `db.backup.json`, `scripts/`, `src/utils/`, `src/components/common/` (trừ ProtectedRoute), `src/components/laptop/` (trừ LaptopFilter), `src/api/*Api.js` (trừ axiosClient/authApi), `CartContext`, `ToastContext`, `LaptopForm`, `Cart*`, `Checkout*`, `*Order*`, `*Review*`, `*Navbar*`, `Home*`, `LaptopList*`, `LaptopDetail*`, `AdminLaptopFormPage`, `docs/TEST_REPORT.md`, `README.md` |
 
 ### 2.2 Thông tin nhóm (điền trước khi bắt đầu)
 
 | Người | Họ tên | MSSV | GitHub username |
 |---|---|---|---|
-| A (Leader) | | | |
-| B | | | |
-| C | | | |
+| A (Leader) | Lê Quang Trường | DE181052 | [@Mynameistruong](https://github.com/Mynameistruong) |
+| B (Catalog + Commerce/QA) | Nguyễn Phước Thiện | DE190743 | [@Phuocthien253](https://github.com/Phuocthien253) |
 
 ### 2.3 Ai làm gì — ai review gì
 
 | Người | Issue mình code | PR mình review |
 |---|---|---|
-| **A (Leader)** | #1, #2, #5, #8, #9, #10, #13, #18, #19, #26, #29 (11 issue) | #3, #7, #11, #15, #17, #20, #22, #24, #27, #30, #31 |
-| **B** | #4, #6, #11, #14, #15, #16, #17, #20, #21, #30 (10 issue) | #1, #5, #9, #12, #13, #18, #23, #25, #28, #29 |
-| **C** | #3, #7, #12, #22, #23, #24, #25, #27, #28, #31 (10 issue) | #2, #4, #6, #8, #10, #14, #16, #19, #21, #26 |
+| **A (Leader)** | #1, #2, #5, #8, #9, #10, #13, #18, #19, #26, #29 (11 issue) | #3, #4, #6, #7, #11, #12, #14–#17, #20–#25, #27, #28, #30, #31 |
+| **B (Catalog + Commerce/QA)** | #3, #4, #6, #7, #11, #12, #14–#17, #20–#25, #27, #28, #30, #31 (20 issue) | #1, #2, #5, #8–#10, #13, #18, #19, #26, #29 |
 
-Release `v1.0.0`: A làm, **B + C** approve (cần 2), B review back-merge.
+**Quy tắc review nhóm 2 người:** tác giả A được B review; tác giả B được A review. Không tự approve. Do nhóm chỉ có hai thành viên, PR release cần **1 approval của người còn lại**; nếu quy định repository/giảng viên bắt buộc 2 approvals, cần mời giảng viên hoặc một reviewer ngoài nhóm thay vì tự tạo reviewer giả.
 
-**Review xoay vòng:** mỗi PR có 1 reviewer chính (cột *Reviewer* ở mục 6), xoay giữa A, B, C để ai cũng đọc code các mảng khác. Người viết không tự review. PR sửa file của người khác (ví dụ thêm route vào `App.jsx` của A) mời thêm chủ file làm reviewer thứ hai.
+Release `v1.0.0`: A chuẩn bị release, B review/approve; B review back-merge. Mỗi PR có một reviewer chính là thành viên còn lại (xem mục 6). Với PR release chỉ có thể có một approval nội bộ trong nhóm.
 
 ---
 
@@ -95,7 +92,7 @@ feature           ●─●    ●─●                             feature/<is
 
 | Nhánh | Tạo từ | Merge vào | Kiểu merge | Bảo vệ |
 |---|---|---|---|---|
-| `main` | — | — | Merge commit (từ `release/*`, `hotfix/*`) | PR + 2 approvals |
+| `main` | — | — | Merge commit (từ `release/*`, `hotfix/*`) | PR + 1 approval của thành viên còn lại; mời reviewer ngoài nhóm nếu ruleset bắt buộc 2 |
 | `develop` | `main` (1 lần đầu) | — | Squash merge (từ `feature/*`, `fix/*`…) | PR + 1 approval |
 | `feature/*`, `fix/*` | `develop` | `develop` | Squash | — |
 | `docs/*`, `chore/*`, `test/*`, `refactor/*` | `develop` | `develop` | Squash | — |
@@ -247,36 +244,36 @@ Priority: **high** = chặn người khác, làm trước · **medium** = chức
 | # | Title | Người làm | Reviewer | Labels (module · priority) | Milestone | Nhánh | Cần merge trước |
 |---|---|---|---|---|---|---|---|
 | 1 | [CHORE] Repo templates & CODEOWNERS | A | B | infra · high | Sprint 0 | `chore/1-repo-templates` | — |
-| 2 | [FEATURE] Project setup & configuration (Phần 0) | A | C | infra · high | Sprint 0 | `feature/2-project-setup` | #1 |
-| 3 | [CHORE] Seed data db.json (0.4) | C | A | infra · high | Sprint 0 | `chore/3-seed-data` | #2 |
-| 4 | [FEATURE] Format utils formatPrice/formatDate (A3) | B | C | ui · medium | Sprint 0 | `feature/4-format-utils` | #2 |
+| 2 | [FEATURE] Project setup & configuration (Phần 0) | A | B | infra · high | Sprint 0 | `feature/2-project-setup` | #1 |
+| 3 | [CHORE] Seed data db.json (0.4) | B | A | infra · high | Sprint 0 | `chore/3-seed-data` | #2 |
+| 4 | [FEATURE] Format utils formatPrice/formatDate (A3) | B | A | ui · medium | Sprint 0 | `feature/4-format-utils` | #2 |
 | 5 | [FEATURE] axiosClient & interceptors (B1–B4) | A | B | api · high | Sprint 0 | `feature/5-axios-client` | #2 |
-| 6 | [FEATURE] Laptop, catalog & review services (B5) | B | C | api · high | Sprint 0 | `feature/6-laptop-catalog-review-api` | #5 |
-| 7 | [FEATURE] Cart & order services (B5) | C | A | api · high | Sprint 0 | `feature/7-cart-order-api` | #5 |
-| 8 | [FEATURE] Fake login & AuthContext (B6) | A | C | auth · high | Sprint 1 | `feature/8-login` | #5, #9 |
+| 6 | [FEATURE] Laptop, catalog & review services (B5) | B | A | api · high | Sprint 0 | `feature/6-laptop-catalog-review-api` | #5 |
+| 7 | [FEATURE] Cart & order services (B5) | B | A | api · high | Sprint 0 | `feature/7-cart-order-api` | #5 |
+| 8 | [FEATURE] Fake login & AuthContext (B6) | A | B | auth · high | Sprint 1 | `feature/8-login` | #5, #9 |
 | 9 | [FEATURE] Routes, layouts & 404 (F1, F6, F7) | A | B | layout · high | Sprint 1 | `feature/9-routes-layout` | #2 |
-| 10 | [FEATURE] ProtectedRoute by role (F2) | A | C | auth · high | Sprint 1 | `feature/10-protected-route` | #8, #9, #12 |
+| 10 | [FEATURE] ProtectedRoute by role (F2) | A | B | auth · high | Sprint 1 | `feature/10-protected-route` | #8, #9, #12 |
 | 11 | [FEATURE] Common components: Loading, ErrorAlert, EmptyState, Price (E) | B | A | ui · high | Sprint 1 | `feature/11-common-components` | #4 |
-| 12 | [FEATURE] ToastContext & ConfirmModal (E) | C | B | ui · high | Sprint 1 | `feature/12-toast-confirm-modal` | #2 |
+| 12 | [FEATURE] ToastContext & ConfirmModal (E) | B | A | ui · high | Sprint 1 | `feature/12-toast-confirm-modal` | #2 |
 | 13 | [FEATURE] Hooks useAxios & useDebounce (H1, H2) | A | B | api · high | Sprint 1 | `feature/13-use-axios-debounce` | #5 |
-| 14 | [FEATURE] AppNavbar & Footer (E1) | B | C | layout · medium | Sprint 1 | `feature/14-navbar-footer` | #8, #9, #12 |
+| 14 | [FEATURE] AppNavbar & Footer (E1) | B | A | layout · medium | Sprint 1 | `feature/14-navbar-footer` | #8, #9, #12 |
 | 15 | [FEATURE] LaptopCard & LaptopGrid (E2) | B | A | ui · medium | Sprint 1 | `feature/15-laptop-card-grid` | #11, #14 |
-| 16 | [FEATURE] Home page with Promise.all (C1, C2) | B | C | catalog · medium | Sprint 2 | `feature/16-home-page` | #6, #13, #15 |
+| 16 | [FEATURE] Home page with Promise.all (C1, C2) | B | A | catalog · medium | Sprint 2 | `feature/16-home-page` | #6, #13, #15 |
 | 17 | [FEATURE] Laptop list: URL filters, sort, pagination, cancel (F3, E6, D1) | B | A | catalog · medium | Sprint 2 | `feature/17-laptop-list` | #6, #13, #15, #18 |
 | 18 | [FEATURE] LaptopFilter controlled component (E3) | A | B | catalog · medium | Sprint 2 | `feature/18-laptop-filter` | #6 |
-| 19 | [FEATURE] Navbar search suggestions (D3) | A | C | catalog · medium | Sprint 2 | `feature/19-search-suggest` | #13, #14 |
+| 19 | [FEATURE] Navbar search suggestions (D3) | A | B | catalog · medium | Sprint 2 | `feature/19-search-suggest` | #13, #14 |
 | 20 | [FEATURE] Laptop detail with allSettled & cancel (C3, D2, E4) | B | A | detail · medium | Sprint 2 | `feature/20-laptop-detail` | #6, #13, #15 |
-| 21 | [FEATURE] Review list & form (G2) | B | C | detail · medium | Sprint 2 | `feature/21-reviews` | #20 |
-| 22 | [FEATURE] CartContext & add to cart (G1) | C | A | cart · medium | Sprint 3 | `feature/22-cart-context` | #7, #8, #15 |
-| 23 | [FEATURE] Cart page & optimistic delete (G1, H4) | C | B | cart · medium | Sprint 3 | `feature/23-cart-page` | #12, #22 |
-| 24 | [FEATURE] Checkout flow (C4) | C | A | cart · medium | Sprint 3 | `feature/24-checkout` | #23 |
-| 25 | [FEATURE] My orders & cancel order (G4) | C | B | order · medium | Sprint 3 | `feature/25-my-orders` | #13, #24 |
-| 26 | [FEATURE] Admin laptop table, quick stock edit, optimistic delete (G3, H4) | A | C | admin · medium | Sprint 3 | `feature/26-admin-laptops` | #6, #10, #13 |
-| 27 | [FEATURE] Admin laptop create/edit form (G3, F4, F5) | C | A | admin · medium | Sprint 3 | `feature/27-admin-laptop-form` | #6, #10, #13 |
-| 28 | [FEATURE] Admin order management (G4) | C | B | order · medium | Sprint 3 | `feature/28-admin-orders` | #7, #10, #13, #25 |
+| 21 | [FEATURE] Review list & form (G2) | B | A | detail · medium | Sprint 2 | `feature/21-reviews` | #20 |
+| 22 | [FEATURE] CartContext & add to cart (G1) | B | A | cart · medium | Sprint 3 | `feature/22-cart-context` | #7, #8, #15 |
+| 23 | [FEATURE] Cart page & optimistic delete (G1, H4) | B | A | cart · medium | Sprint 3 | `feature/23-cart-page` | #12, #22 |
+| 24 | [FEATURE] Checkout flow (C4) | B | A | cart · medium | Sprint 3 | `feature/24-checkout` | #23 |
+| 25 | [FEATURE] My orders & cancel order (G4) | B | A | order · medium | Sprint 3 | `feature/25-my-orders` | #13, #24 |
+| 26 | [FEATURE] Admin laptop table, quick stock edit, optimistic delete (G3, H4) | A | B | admin · medium | Sprint 3 | `feature/26-admin-laptops` | #6, #10, #13 |
+| 27 | [FEATURE] Admin laptop create/edit form (G3, F4, F5) | B | A | admin · medium | Sprint 3 | `feature/27-admin-laptop-form` | #6, #10, #13 |
+| 28 | [FEATURE] Admin order management (G4) | B | A | order · medium | Sprint 3 | `feature/28-admin-orders` | #7, #10, #13, #25 |
 | 29 | [FEATURE] Bulk delete with allSettled (H3) | A | B | admin · low | Sprint 3 | `feature/29-bulk-delete` | #26 |
 | 30 | [DOCS] README: setup, timing results, 4 answers | B | A | infra · medium | Sprint 4 | `docs/30-readme` | #16 |
-| 31 | [TEST] Test report 19 scenarios & demo video | C | A | infra · high | Sprint 4 | `test/31-test-report` | #1 – #30 |
+| 31 | [TEST] Test report 19 scenarios & demo video | B | A | infra · high | Sprint 4 | `test/31-test-report` | #1 – #30 |
 
 ---
 
@@ -340,7 +337,7 @@ Phần 0: 0.1, 0.2, 0.3, 0.6
 
 ## Ghi chú kỹ thuật
 Nhánh `feature/2-project-setup` · Phụ thuộc: #1 · Sau khi merge cả nhóm bật hook: `git config core.hooksPath .githooks`
-**Reviewer:** C
+**Reviewer:** B
 ```
 
 ### Issue 3
@@ -348,7 +345,7 @@ Nhánh `feature/2-project-setup` · Phụ thuộc: #1 · Sau khi merge cả nhó
 | Ô trên form | Nhập / chọn |
 |---|---|
 | **Title** | `[CHORE] Seed data db.json (0.4)` |
-| **Assignees** | C |
+| **Assignees** | B |
 | **Labels** | `type: chore`, `module: infra`, `priority: high` |
 | **Projects** | `LaptopStore Board` |
 | **Milestone** | `Sprint 0 — Foundation` |
@@ -407,7 +404,7 @@ BR-03
 
 ## Ghi chú kỹ thuật
 Nhánh `feature/4-format-utils` · File `src/utils/format.js` · Phụ thuộc: #2
-**Reviewer:** C
+**Reviewer:** A
 ```
 
 ### Issue 5
@@ -475,7 +472,7 @@ TECH-01, TECH-04
 
 ## Ghi chú kỹ thuật
 Nhánh `feature/6-laptop-catalog-review-api` · Phụ thuộc: #5
-**Reviewer:** C
+**Reviewer:** A
 ```
 
 ### Issue 7
@@ -483,7 +480,7 @@ Nhánh `feature/6-laptop-catalog-review-api` · Phụ thuộc: #5
 | Ô trên form | Nhập / chọn |
 |---|---|
 | **Title** | `[FEATURE] Cart & order services (B5)` |
-| **Assignees** | C |
+| **Assignees** | B |
 | **Labels** | `type: feature`, `module: api`, `priority: high` |
 | **Projects** | `LaptopStore Board` |
 | **Milestone** | `Sprint 0 — Foundation` |
@@ -542,7 +539,7 @@ BR-09
 
 ## Ghi chú kỹ thuật
 Nhánh `feature/8-login` · Phụ thuộc: #5, #9 · Tài khoản demo: admin@laptopstore.vn / khach@laptopstore.vn (123456)
-**Reviewer:** C
+**Reviewer:** B
 ```
 
 ### Issue 9
@@ -608,7 +605,7 @@ BR-09
 
 ## Ghi chú kỹ thuật
 Nhánh `feature/10-protected-route` · Phụ thuộc: #8, #9, #12 · Điều kiện "giỏ không rỗng" của `/checkout` làm ở #24
-**Reviewer:** C
+**Reviewer:** B
 ```
 
 ### Issue 11
@@ -650,7 +647,7 @@ Nhánh `feature/11-common-components` · Phụ thuộc: #4
 | Ô trên form | Nhập / chọn |
 |---|---|
 | **Title** | `[FEATURE] ToastContext & ConfirmModal (E)` |
-| **Assignees** | C |
+| **Assignees** | B |
 | **Labels** | `type: feature`, `module: ui`, `priority: high` |
 | **Projects** | `LaptopStore Board` |
 | **Milestone** | `Sprint 1 — Core UI & Auth` |
@@ -674,7 +671,7 @@ TECH-05
 
 ## Ghi chú kỹ thuật
 Nhánh `feature/12-toast-confirm-modal` · Phụ thuộc: #2
-**Reviewer:** B
+**Reviewer:** A
 ```
 
 ### Issue 13
@@ -743,7 +740,7 @@ BR-09, TECH-07
 
 ## Ghi chú kỹ thuật
 Nhánh `feature/14-navbar-footer` · Phụ thuộc: #8, #9, #12 · Thêm `CartProvider` vào `main.jsx` → mời A review thêm
-**Reviewer:** C
+**Reviewer:** A
 ```
 
 ### Issue 15
@@ -810,7 +807,7 @@ TECH-02, TECH-03, TECH-06
 
 ## Ghi chú kỹ thuật
 Nhánh `feature/16-home-page` · Phụ thuộc: #6, #13, #15 · Kết quả đo ghi vào README ở #30
-**Reviewer:** C
+**Reviewer:** A
 ```
 
 ### Issue 17
@@ -912,7 +909,7 @@ TECH-03
 
 ## Ghi chú kỹ thuật
 Nhánh `feature/19-search-suggest` · Component `SearchSuggest.jsx` · Phụ thuộc: #13, #14
-**Reviewer:** C
+**Reviewer:** B
 ```
 
 ### Issue 20
@@ -979,7 +976,7 @@ BR-07
 
 ## Ghi chú kỹ thuật
 Nhánh `feature/21-reviews` · Phụ thuộc: #20
-**Reviewer:** C
+**Reviewer:** A
 ```
 
 ### Issue 22
@@ -987,7 +984,7 @@ Nhánh `feature/21-reviews` · Phụ thuộc: #20
 | Ô trên form | Nhập / chọn |
 |---|---|
 | **Title** | `[FEATURE] CartContext & add to cart (G1)` |
-| **Assignees** | C |
+| **Assignees** | B |
 | **Labels** | `type: feature`, `module: cart`, `priority: medium` |
 | **Projects** | `LaptopStore Board` |
 | **Milestone** | `Sprint 3 — Cart, Order & Admin` |
@@ -1022,7 +1019,7 @@ Nhánh `feature/22-cart-context` · Phụ thuộc: #7, #8, #15 · Thay bản t�
 | Ô trên form | Nhập / chọn |
 |---|---|
 | **Title** | `[FEATURE] Cart page & optimistic delete (G1, H4)` |
-| **Assignees** | C |
+| **Assignees** | B |
 | **Labels** | `type: feature`, `module: cart`, `priority: medium` |
 | **Projects** | `LaptopStore Board` |
 | **Milestone** | `Sprint 3 — Cart, Order & Admin` |
@@ -1047,7 +1044,7 @@ BR-02, BR-03, TECH-05
 
 ## Ghi chú kỹ thuật
 Nhánh `feature/23-cart-page` · Phụ thuộc: #12, #22 · Kịch bản 8, 9, 17
-**Reviewer:** B
+**Reviewer:** A
 ```
 
 ### Issue 24
@@ -1055,7 +1052,7 @@ Nhánh `feature/23-cart-page` · Phụ thuộc: #12, #22 · Kịch bản 8, 9, 1
 | Ô trên form | Nhập / chọn |
 |---|---|
 | **Title** | `[FEATURE] Checkout flow (C4)` |
-| **Assignees** | C |
+| **Assignees** | B |
 | **Labels** | `type: feature`, `module: cart`, `priority: medium` |
 | **Projects** | `LaptopStore Board` |
 | **Milestone** | `Sprint 3 — Cart, Order & Admin` |
@@ -1092,7 +1089,7 @@ Nhánh `feature/24-checkout` · Phụ thuộc: #23 · Kịch bản 10
 | Ô trên form | Nhập / chọn |
 |---|---|
 | **Title** | `[FEATURE] My orders & cancel order (G4)` |
-| **Assignees** | C |
+| **Assignees** | B |
 | **Labels** | `type: feature`, `module: order`, `priority: medium` |
 | **Projects** | `LaptopStore Board` |
 | **Milestone** | `Sprint 3 — Cart, Order & Admin` |
@@ -1116,7 +1113,7 @@ BR-05, TECH-05
 
 ## Ghi chú kỹ thuật
 Nhánh `feature/25-my-orders` · Phụ thuộc: #13, #24 · Tạo `utils/orderStatus.js` dùng chung với #28 · Kịch bản 11
-**Reviewer:** B
+**Reviewer:** A
 ```
 
 ### Issue 26
@@ -1150,7 +1147,7 @@ TECH-03, TECH-05
 
 ## Ghi chú kỹ thuật
 Nhánh `feature/26-admin-laptops` · Phụ thuộc: #6, #10, #13 · Kịch bản 15
-**Reviewer:** C
+**Reviewer:** B
 ```
 
 ### Issue 27
@@ -1158,7 +1155,7 @@ Nhánh `feature/26-admin-laptops` · Phụ thuộc: #6, #10, #13 · Kịch bản
 | Ô trên form | Nhập / chọn |
 |---|---|
 | **Title** | `[FEATURE] Admin laptop create/edit form (G3, F4, F5)` |
-| **Assignees** | C |
+| **Assignees** | B |
 | **Labels** | `type: feature`, `module: admin`, `priority: medium` |
 | **Projects** | `LaptopStore Board` |
 | **Milestone** | `Sprint 3 — Cart, Order & Admin` |
@@ -1192,7 +1189,7 @@ Nhánh `feature/27-admin-laptop-form` · Phụ thuộc: #6, #10, #13 · Kịch b
 | Ô trên form | Nhập / chọn |
 |---|---|
 | **Title** | `[FEATURE] Admin order management (G4)` |
-| **Assignees** | C |
+| **Assignees** | B |
 | **Labels** | `type: feature`, `module: order`, `priority: medium` |
 | **Projects** | `LaptopStore Board` |
 | **Milestone** | `Sprint 3 — Cart, Order & Admin` |
@@ -1217,7 +1214,7 @@ BR-06
 
 ## Ghi chú kỹ thuật
 Nhánh `feature/28-admin-orders` · Phụ thuộc: #7, #10, #13, #25
-**Reviewer:** B
+**Reviewer:** A
 ```
 
 ### Issue 29
@@ -1288,7 +1285,7 @@ Nhánh `docs/30-readme` · Phụ thuộc: #16 (kết quả đo) · Hoàn thiện
 | Ô trên form | Nhập / chọn |
 |---|---|
 | **Title** | `[TEST] Test report 19 scenarios & demo video` |
-| **Assignees** | C |
+| **Assignees** | B |
 | **Labels** | `type: test`, `module: infra`, `priority: high` |
 | **Projects** | `LaptopStore Board` |
 | **Milestone** | `Sprint 4 — Test & Release v1.0.0` |
@@ -1341,7 +1338,7 @@ flowchart LR
   I25 & I29 & I27 & I28 & I21 & I17 & I19 --> I31[#31 Test & video]
 ```
 
-**Đường găng:** #1 → #2 → #5 → #13 → #17 / #20 / #26. A phải merge **#5 và #13 sớm nhất**. Trong lúc chờ, B và C làm phần giao diện thuần (#11, #12, #15) với dữ liệu giả rồi nối API sau.
+**Đường găng:** #1 → #2 → #5 → #13 → #17 / #20 / #26. A phải merge **#5 và #13 sớm nhất**. Trong lúc chờ, B có thể làm phần giao diện thuần (#11, #12, #15) với dữ liệu giả rồi nối API sau.
 
 ---
 
@@ -1384,7 +1381,7 @@ Issue chỉ được chuyển **Done** khi tất cả đều đúng:
 | Issue & board | 31 issue đúng mẫu, đủ assignee / label / milestone; board đi đúng cột; có ít nhất 3 issue `[BUG]` | 0.4 |
 | Commit | Commit đúng Conventional Commits, có `Refs #n`; mỗi thành viên ≥ 15 commit có nghĩa | 0.4 |
 | Pull Request & review | Mọi thay đổi qua PR; template đầy đủ, `Closes #n`; mỗi người review đủ phần được giao, có góp ý `blocker:/suggestion:/nit:` thực chất | 0.4 |
-| Release | `release/1.0.0` → `main` (2 approve), tag `v1.0.0`, GitHub Release, back-merge về `develop` | 0.4 |
+| Release | `release/1.0.0` → `main`, B approve; nếu giảng viên yêu cầu đủ 2 approvals thì mời thêm reviewer ngoài nhóm; tag `v1.0.0`, GitHub Release, back-merge về `develop` | 0.4 |
 
 > **Điểm cá nhân** = điểm nhóm × hệ số đóng góp (0.6 – 1.0), dựa trên *Insights → Contributors*, số issue/PR/review của từng người và phần trình bày trong video. Push thẳng `main`/`develop`, force-push xoá lịch sử của người khác, hoặc commit hộ cả nhóm → hệ số tối đa 0.6 cho người liên quan.
 

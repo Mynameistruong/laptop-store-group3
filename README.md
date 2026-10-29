@@ -6,9 +6,8 @@ Website bán laptop cho bài tập FER202 / Exercise 27 mở rộng, xây dựng
 
 | Vai trò | Họ tên | MSSV | GitHub |
 |---|---|---|---|
-| A — Leader | Chưa cung cấp | Chưa cung cấp | Chưa cung cấp |
-| B — Catalog | Chưa cung cấp | Chưa cung cấp | Chưa cung cấp |
-| C — Commerce & QA | Chưa cung cấp | Chưa cung cấp | Chưa cung cấp |
+| A — Leader | Lê Quang Trường | DE181052 | [@Mynameistruong](https://github.com/Mynameistruong) |
+| B — Catalog + Commerce/QA | Nguyễn Phước Thiện | DE190743 | [@Phuocthien253](https://github.com/Phuocthien253) |
 
 - GitHub Project board: Chưa cung cấp
 - Video demo 3–5 phút: Chưa quay
@@ -87,4 +86,4 @@ Một lần đo cục bộ với json-server có độ trễ 500 ms và 4 reques
 
 ## Kiểm thử và trạng thái nộp bài
 
-Chạy `npm run lint` và `npm run build` trong `laptop-store/`. Các kịch bản thủ công và trạng thái thực hiện được ghi trong [test report](laptop-store/docs/TEST_REPORT.md). Thông tin thành viên, board GitHub, video và release cần được hoàn tất cùng nhóm trước khi nộp.
+Chạy `npm run lint` và `npm run build` trong `laptop-store/`. Các kịch bản thủ công và trạng thái thực hiện được ghi trong [test report](laptop-store/docs/TEST_REPORT.md). Board GitHub, video và release cần được hoàn tất cùng nhóm trước khi nộp.

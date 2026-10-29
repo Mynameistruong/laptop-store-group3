@@ -6,9 +6,8 @@ Website bán laptop cho bài tập FER202 / Exercise 27 mở rộng, xây dựng
 
 | Vai trò | Họ tên | MSSV | GitHub |
 |---|---|---|---|
-| A — Leader | Chưa cung cấp | Chưa cung cấp | Chưa cung cấp |
-| B — Catalog | Chưa cung cấp | Chưa cung cấp | Chưa cung cấp |
-| C — Commerce & QA | Chưa cung cấp | Chưa cung cấp | Chưa cung cấp |
+| A — Leader | Lê Quang Trường | DE181052 | [@Mynameistruong](https://github.com/Mynameistruong) |
+| B — Catalog + Commerce/QA | Nguyễn Phước Thiện | DE190743 | [@Phuocthien253](https://github.com/Phuocthien253) |
 
 - GitHub Project board: Chưa cung cấp
 - Video demo 3–5 phút: Chưa quay
@@ -91,4 +90,4 @@ npm run lint
 npm run build
 ```
 
-Các kịch bản thủ công và trạng thái thực hiện được ghi trong [docs/TEST_REPORT.md](docs/TEST_REPORT.md). Các thông tin nhóm, project board, video và release cần được điền/tạo cùng các thành viên trước khi nộp.
+Các kịch bản thủ công và trạng thái thực hiện được ghi trong [docs/TEST_REPORT.md](docs/TEST_REPORT.md). Project board, video và release cần được điền/tạo cùng các thành viên trước khi nộp.

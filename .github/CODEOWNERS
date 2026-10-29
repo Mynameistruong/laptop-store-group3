@@ -1,1 +1,45 @@
-* @Mynameistruong @Phuocthien253
+* @Mynameistruong
+
+# B — Catalog, Commerce, and QA
+/laptop-store/db.json @Phuocthien253
+/laptop-store/db.backup.json @Phuocthien253
+/laptop-store/scripts/ @Phuocthien253
+/laptop-store/src/utils/ @Phuocthien253
+/laptop-store/src/components/common/ @Phuocthien253
+/laptop-store/src/components/common/ProtectedRoute.jsx @Mynameistruong
+/laptop-store/src/components/laptop/ @Phuocthien253
+/laptop-store/src/components/layout/AppNavbar.jsx @Phuocthien253
+/laptop-store/src/components/layout/Footer.jsx @Phuocthien253
+/laptop-store/src/components/layout/SearchSuggest.jsx @Phuocthien253
+/laptop-store/src/contexts/CartContext.jsx @Phuocthien253
+/laptop-store/src/contexts/ToastContext.jsx @Phuocthien253
+/laptop-store/src/pages/HomePage.jsx @Phuocthien253
+/laptop-store/src/pages/LaptopListPage.jsx @Phuocthien253
+/laptop-store/src/pages/LaptopDetailPage.jsx @Phuocthien253
+/laptop-store/src/pages/CartPage.jsx @Phuocthien253
+/laptop-store/src/pages/CheckoutPage.jsx @Phuocthien253
+/laptop-store/src/pages/OrderListPage.jsx @Phuocthien253
+/laptop-store/src/pages/admin/AdminLaptopFormPage.jsx @Phuocthien253
+/laptop-store/src/pages/admin/AdminOrderPage.jsx @Phuocthien253
+/laptop-store/README.md @Phuocthien253
+/README.md @Phuocthien253
+/laptop-store/docs/TEST_REPORT.md @Phuocthien253
+
+# A — Infrastructure, core API/auth, shared hooks, routes, and admin laptop table
+/.github/ @Mynameistruong
+/.githooks/ @Mynameistruong
+/laptop-store/package.json @Mynameistruong
+/laptop-store/src/App.jsx @Mynameistruong
+/laptop-store/src/api/axiosClient.js @Mynameistruong
+/laptop-store/src/api/authApi.js @Mynameistruong
+/laptop-store/src/hooks/ @Mynameistruong
+/laptop-store/src/contexts/AuthContext.jsx @Mynameistruong
+/laptop-store/src/components/layout/*Layout.jsx @Mynameistruong
+/laptop-store/src/components/laptop/LaptopFilter.jsx @Mynameistruong
+/laptop-store/src/pages/admin/AdminLaptopPage.jsx @Mynameistruong
+/laptop-store/docs/ASSIGNMENT.md @Mynameistruong
+/laptop-store/src/api/laptopApi.js @Phuocthien253
+/laptop-store/src/api/catalogApi.js @Phuocthien253
+/laptop-store/src/api/reviewApi.js @Phuocthien253
+/laptop-store/src/api/cartApi.js @Phuocthien253
+/laptop-store/src/api/orderApi.js @Phuocthien253

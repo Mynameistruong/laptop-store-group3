@@ -4,6 +4,9 @@
 - Môi trường: Windows, Node.js 22.17.1, Vite 8, json-server 0.17.4, trình duyệt tích hợp VS Code
 - Phạm vi: smoke test cục bộ; đây chưa phải biên bản kiểm thử phát hành của cả nhóm.
 - Kết quả tự động: `npm run lint` và `npm run build` thành công.
+- Nhóm kiểm thử: A — Lê Quang Trường (DE181052); B — Nguyễn Phước Thiện (DE190743).
+- Phân công kiểm thử tiếp: A phụ trách hạ tầng, auth, routing, request và admin laptop; B phụ trách catalog, review, giỏ hàng, checkout, đơn hàng, form admin và dữ liệu.
+- Các lượt smoke test trình duyệt được thực hiện trong phiên hỗ trợ lập trình; thành viên nhóm cần tự chạy/đối chiếu các trường hợp còn ghi “Chưa chạy” trước khi xác nhận báo cáo cuối.
 
 | # | Kịch bản | Kết quả | Ghi chú |
 |---|---|---|---|
