@@ -13,6 +13,7 @@ Website bán laptop cho bài tập FER202 / Exercise 27 mở rộng, xây dựng
 - Video demo 3–5 phút: Chưa quay
 - Release `v1.0.0`: Chưa tạo
 - Đề bài: [docs/ASSIGNMENT.md](docs/ASSIGNMENT.md)
+- Báo cáo dự án và quy tắc phối hợp: [docs/PROJECT_REPORT.md](docs/PROJECT_REPORT.md)
 - Báo cáo kiểm thử: [docs/TEST_REPORT.md](docs/TEST_REPORT.md)
 - Ảnh trang chủ: [docs/screenshots/home.png](docs/screenshots/home.png)
 
