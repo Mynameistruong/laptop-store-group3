@@ -6,8 +6,8 @@ Website bán laptop cho bài tập FER202 / Exercise 27 mở rộng, xây dựng
 
 | Vai trò | Họ tên | MSSV | GitHub |
 |---|---|---|---|
-| A — Leader | Lê Quang Trường | DE181052 | [@Mynameistruong](https://github.com/Mynameistruong) |
-| B — Catalog + Commerce/QA | Nguyễn Phước Thiện | DE190743 | [@Phuocthien253](https://github.com/Phuocthien253) |
+| A — Leader, Issues #16–#31 | Lê Quang Trường | DE181052 | [@Mynameistruong](https://github.com/Mynameistruong) |
+| B, Issues #1–#15 | Nguyễn Phước Thiện | DE190743 | [@Phuocthien253](https://github.com/Phuocthien253) |
 
 - GitHub Project board: Chưa cung cấp
 - Video demo 3–5 phút: Chưa quay

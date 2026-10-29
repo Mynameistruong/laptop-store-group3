@@ -5,7 +5,7 @@
 - Phạm vi: smoke test cục bộ; đây chưa phải biên bản kiểm thử phát hành của cả nhóm.
 - Kết quả tự động: `npm run lint` và `npm run build` thành công.
 - Nhóm kiểm thử: A — Lê Quang Trường (DE181052); B — Nguyễn Phước Thiện (DE190743).
-- Phân công kiểm thử tiếp: A phụ trách hạ tầng, auth, routing, request và admin laptop; B phụ trách catalog, review, giỏ hàng, checkout, đơn hàng, form admin và dữ liệu.
+- Phân công theo issue: B (#1–#15) phụ trách kiểm thử nền tảng, dữ liệu, API, auth, routes/layout, shared UI và hooks; A (#16–#31) phụ trách catalog, review, giỏ hàng, checkout, đơn hàng, admin, README và test report. Phân công người thực chạy từng kịch bản cần ghi thêm vào bảng khi kiểm thử.
 - Các lượt smoke test trình duyệt được thực hiện trong phiên hỗ trợ lập trình; thành viên nhóm cần tự chạy/đối chiếu các trường hợp còn ghi “Chưa chạy” trước khi xác nhận báo cáo cuối.
 
 | # | Kịch bản | Kết quả | Ghi chú |
