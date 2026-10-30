@@ -3,7 +3,7 @@ const priceFormatter = new Intl.NumberFormat('vi-VN', { style: 'currency', curre
 /** formatPrice(39990000) → "39.990.000 ₫" ; null/undefined → '' */
 export const formatPrice = (value) => {
   if (value === null || value === undefined || value === '') return '';
-  return priceFormatter.format(Number(value) || 0);
+  return priceFormatter.format(Number(value) || 0).replace(/\u00a0/g, ' ');
 };
 
 /** formatDate('2026-09-10T10:00:00Z') → "10/09/2026" */
