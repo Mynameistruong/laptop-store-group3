@@ -25,7 +25,7 @@ axiosClient.interceptors.request.use((config) => {
   config.metadata = { start: performance.now() };
 
   if (import.meta.env.DEV) {
-    console.log(`[API] ${config.method.toUpperCase()} ${config.url}`, config.params ?? '');
+    console.log(`[API] ${config.method.toUpperCase()} ${config.url}`);
   }
   return config;
 });
